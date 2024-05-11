@@ -270,10 +270,10 @@ public class SplayTree<E> {
             } else if (comp < 0) {
                 // Element e must lie to the right
                 if(curr.left != null){
-                    count += curr.left.size + 1;
-                }else{
-                    count++;
+                    // count += curr.left.size;
                 }
+                count++;
+
                 curr = curr.right;
             } else {
                 // Element e must lie to the left (no change to count)
