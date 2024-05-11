@@ -317,7 +317,25 @@ public class SplayTree<E> {
         // The only two node's whose sizes changed as a result of rotation are u and v
         // u's size remains the same
         // v's size can just be computed
-        v.size = u.size - v.size;
+        if(v.left != null && v.right != null){
+            v.size = 1 + v.left.size + v.right.size;
+        }else if(v.right != null){
+            v.size = 1 + v.right.size;
+        }else if(v.left != null){
+            v.size = 1 + v.left.size;
+        }else{
+            v.size =  1;
+        }
+
+        // if(u.left != null && u.right != null){
+        //     u.size = 1 + u.left.size + u.right.size;
+        // }else if(u.right != null){
+        //     u.size = 1 + u.right.size;
+        // }else if(u.left != null){
+        //     u.size = 1 + u.left.size;
+        // }else{
+        //     u.size =  1;
+        // }
     }
 
     // Perform a right rotation of the given node U and its left child V
@@ -349,7 +367,26 @@ public class SplayTree<E> {
         // The only two node's whose sizes changed as a result of rotation are u and v
         // u's size remains the same
         // v's size can just be computed
-        v.size = u.size - v.size;
+        if(v.left != null && v.right != null){
+            v.size = 1 + v.left.size + v.right.size;
+        }else if(v.right != null){
+            v.size = 1 + v.right.size;
+        }else if(v.left != null){
+            v.size = 1 + v.left.size;
+        }else{
+            v.size = 1;
+        }
+
+        // if(u.left != null && u.right != null){
+        //     u.size = 1 + u.left.size + u.right.size;
+        // }else if(u.right != null){
+        //     u.size = 1 + u.right.size;
+        // }else if(u.left != null){
+        //     u.size = 1 + u.left.size;
+        // }else{
+        //     u.size =  1;
+        // }
+
     }
 
     // Perform a splay of the current node all the way to the root

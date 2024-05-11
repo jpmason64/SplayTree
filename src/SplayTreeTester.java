@@ -81,6 +81,7 @@ public class SplayTreeTester {
             int expected = (b-a+1);
             if (count != expected) {
                 System.out.println("Error: Tree returned " + count + " but expected " + expected + ". Aborting.");
+                tree.printTree(System.out);
                 System.exit(1);
             }
         }
